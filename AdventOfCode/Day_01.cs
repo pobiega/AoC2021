@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using System.Runtime.CompilerServices;
-
-namespace AdventOfCode;
+﻿namespace AdventOfCode;
 
 public class Day_01 : BaseDay
 {
