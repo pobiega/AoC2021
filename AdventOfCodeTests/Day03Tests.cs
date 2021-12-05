@@ -7,16 +7,6 @@ namespace AdventOfCodeTests;
 public class Day03Tests
 {
     [Theory]
-    [InlineData("00100", "00100")]
-    [InlineData("11100", "11100")]
-    [InlineData("11111", "11111")]
-    public void CanFindMostCommonBits(string input, string expected)
-    {
-        //var actual = Day_03.GetMostCommonBits(new[] { input });
-        //actual.Should().BeEquivalentTo(expected);
-    }
-
-    [Theory]
     [InlineData("00100", "11011")]
     [InlineData("11100", "00011")]
     [InlineData("11111", "00000")]
@@ -32,29 +22,6 @@ public class Day03Tests
     {
         var actual = Day_03.ConvertBinaryStringToInt(input);
         actual.Should().Be(expected);
-    }
-
-    [Fact]
-    public void CanCalculateGamma()
-    {
-        var input = new[]
-        {
-            "00100",
-            "11110",
-            "10110",
-            "10111",
-            "10101",
-            "01111",
-            "00111",
-            "11100",
-            "10000",
-            "11001",
-            "00010",
-            "01010"
-        };
-
-        //var actual = Day_03.GetMostCommonBits(input);
-        //actual.Should().BeEquivalentTo("10110");
     }
 
     [Fact]
