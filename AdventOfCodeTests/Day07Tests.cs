@@ -1,10 +1,5 @@
 ﻿using AdventOfCode;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace AdventOfCodeTests;
@@ -19,6 +14,16 @@ public class Day07Tests
         var actual = Day_07.Part1(input);
 
         actual.Should().Be(37);
+    }
+
+    [Fact]
+    public void Part2_Samples()
+    {
+        var input = new[] { 16, 1, 2, 0, 4, 2, 7, 1, 2, 14 };
+
+        var actual = Day_07.Part2(input);
+
+        actual.Should().Be(168);
     }
 
     [Fact]
