@@ -31,27 +31,27 @@ public class Day_06 : BaseDay
 
     private static long BreedLanternfishLong(int[] initialState, int days)
     {
-        var dict = CreatePopulationDict();
+        var dict = new long[9];
 
         foreach (var item in initialState)
         {
             dict[item]++;
         }
 
-        for (int i = 0; i < days; i++)
+        for (int day = 0; day < days; day++)
         {
-            var newDict = CreatePopulationDict();
+            var newDict = new long[9];
 
-            foreach (var item in dict)
+            for (int i = 0; i < dict.Length; i++)
             {
-                if(item.Key == 0)
+                if (i == 0)
                 {
-                    newDict[8] += item.Value;
-                    newDict[6] += item.Value;
+                    newDict[8] += dict[i];
+                    newDict[6] += dict[i];
                 }
                 else
                 {
-                    newDict[item.Key - 1] += item.Value;
+                    newDict[i - 1] += dict[i];
                 }
             }
 
@@ -62,21 +62,9 @@ public class Day_06 : BaseDay
 
         foreach (var item in dict)
         {
-            sum += item.Value;
+            sum += item;
         }
 
         return sum;
-    }
-
-    private static Dictionary<int,long> CreatePopulationDict()
-    {
-        var population = new Dictionary<int, long>();
-
-        foreach (var key in Enumerable.Range(0, 9))
-        {
-            population.Add(key, 0L);
-        }
-
-        return population;
     }
 }
