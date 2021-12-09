@@ -48,8 +48,6 @@ public class Day_07 : BaseDay
 
     public static (int position, int total) FindViaBinarySpacePartition(int[] positions, Func<int, int> calculateFuelCost)
     {
-        Array.Sort(positions);
-
         var mean = positions.Sum() / positions.Length;
 
         var binarySpace = new[] { mean - 1, mean, mean + 1 };
