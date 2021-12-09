@@ -97,7 +97,7 @@ public class Day_05 : BaseDay
     }
 }
 
-public record Point(int X, int Y)
+public record struct Point(int X, int Y)
 {
     public override string ToString()
     {
