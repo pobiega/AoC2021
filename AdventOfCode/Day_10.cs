@@ -130,10 +130,7 @@ public class Day_10 : BaseDay
             }
             else
             {
-                if (!stack.TryPop(out var opener))
-                {
-                    throw new Exception("Stack unwinded");
-                }
+                var opener = stack.Pop();
                 var expected = _openerToCloser[opener];
 
                 if (item != expected)

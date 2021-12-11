@@ -59,7 +59,7 @@ public class Day10Tests
     [InlineData("<}", true)]
     public void CanFindCorruptedLine(string line, bool expected)
     {
-        var corrupted = Day_10.TryFindCorruptedCharacter(line, out var c);
+        var corrupted = Day_10.TryFindCorruptedCharacter(line, out _);
 
         corrupted.Should().Be(expected);
     }
