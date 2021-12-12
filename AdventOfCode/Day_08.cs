@@ -22,7 +22,7 @@ public class Day_08 : BaseDay
         return new(patterns, outputValues, fullPattern);
     }
 
-    private static Dictionary<int, int> _frequencySumToDigit = new()
+    private static readonly Dictionary<int, int> _frequencySumToDigit = new()
     {
         [42] = 0,
         [17] = 1,

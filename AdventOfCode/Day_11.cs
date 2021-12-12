@@ -15,9 +15,9 @@ public class Day_11 : BaseDay
     {
         var dict = new Dictionary<Point, byte>();
 
-        input.Tap((s, y) =>
-            s.Tap((c, x) =>
-                dict.Add(new Point(x, y), c.ToByte())).ToArray()).ToArray();
+        input.ForEach((s, y) =>
+            s.ForEach((c, x) =>
+                dict.Add(new Point(x, y), c.ToByte())));
 
         return dict;
     }

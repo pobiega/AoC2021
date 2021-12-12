@@ -15,13 +15,13 @@ public enum SegmentIdentifer
     gggg
 }
 
-public class NaiveDay08 : BaseDay
+public class NaiveDay08
 {
     private readonly IEnumerable<Day8Line> _input;
 
     public NaiveDay08()
     {
-        _input = File.ReadAllLines(InputFilePath).Select(ParseLine);
+        //_input = File.ReadAllLines(InputFilePath).Select(ParseLine);
     }
 
     public static Day8Line ParseLine(string line)
@@ -244,12 +244,12 @@ public class NaiveDay08 : BaseDay
         return usageMap;
     }
 
-    public override ValueTask<string> Solve_1()
+    public ValueTask<string> Solve_1()
     {
         return new(Part1(_input).ToString());
     }
 
-    public override ValueTask<string> Solve_2()
+    public ValueTask<string> Solve_2()
     {
         return new(Part2(_input).ToString());
     }

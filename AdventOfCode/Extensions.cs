@@ -94,6 +94,18 @@ public static class AocExtensions
         }
     }
 
+    public static void ForEach<T>(this IEnumerable<T> source, Action<T, int> action)
+    {
+        ArgumentNullException.ThrowIfNull(source);
+        ArgumentNullException.ThrowIfNull(action);
+
+        var index = 0;
+        foreach (var item in source)
+        {
+            action(item, index++);
+        }
+    }
+
     public static IEnumerable<Point> GetAdjacent8(this Point point)
     {
         yield return point with { X = point.X + 1 };
