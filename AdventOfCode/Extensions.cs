@@ -8,6 +8,14 @@ namespace AdventOfCode;
 
 public static class AocExtensions
 {
+    public static void SetIfNotExists<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, Func<TValue> init)
+    {
+        if(!dict.ContainsKey(key))
+        {
+            dict[key] = init();
+        }
+    }
+
     public static byte ToByte(this char c)
     {
         return c switch
