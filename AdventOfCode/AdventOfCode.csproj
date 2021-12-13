@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="AoCHelper" Version="1.0.2" />
+    <PackageReference Include="Spectre.Console" Version="0.43.0" />
   </ItemGroup>
 
   <PropertyGroup>
