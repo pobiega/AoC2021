@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode;
+﻿namespace AdventOfCode;
 
 public static class AocExtensions
 {
     public static void SetIfNotExists<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, Func<TValue> init)
     {
-        if(!dict.ContainsKey(key))
+        if (!dict.ContainsKey(key))
         {
             dict[key] = init();
         }
@@ -125,5 +119,38 @@ public static class AocExtensions
         yield return point with { Y = point.Y - 1, X = point.X + 1 };
         yield return point with { Y = point.Y + 1, X = point.X - 1 };
         yield return point with { Y = point.Y - 1, X = point.X - 1 };
+    }
+
+    public static IEnumerable<T[]> SlidingWindow<T>(this IReadOnlyList<T> source, int windowSize)
+    {
+        for (int i = 0; i < source.Count - windowSize + 1; i++)
+        {
+            var temp = new T[windowSize];
+            for (int j = 0; j < windowSize; j++)
+            {
+                temp[j] = source[i + j];
+            }
+            yield return temp;
+        }
+    }
+
+    public static IEnumerable<string> SlidingWindow(this string source, int windowSize)
+    {
+        for (int i = 0; i < source.Length - windowSize + 1; i++)
+        {
+            yield return source.Substring(i, windowSize);
+        }
+    }
+
+    public static Dictionary<char, int> Frequency(this string input)
+    {
+        var result = new Dictionary<char, int>();
+
+        foreach (var ch in input)
+        {
+            result[ch] = result.GetValueOrDefault(ch, 0) + 1;
+        }
+
+        return result;
     }
 }
