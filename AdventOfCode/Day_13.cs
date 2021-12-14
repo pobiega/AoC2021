@@ -120,8 +120,6 @@ public class Day_13 : BaseDay
         var width = actual.Max(p => p.X) + 1;
         var height = actual.Max(p => p.Y) + 1;
 
-        // replace this with a console based print..
-
         var canvas = new Canvas(width, height);
 
         foreach (var item in actual)

@@ -82,11 +82,11 @@ public class Day_09 : BaseDay
 
         var basins = new List<Point[]>();
 
-        foreach (var item in lowpoints)
+        foreach (var (point, value) in lowpoints)
         {
             // each lowpoint should be the source of a basin.
 
-            var basin = FloodFill(item.point, data);
+            var basin = FloodFill(point, data);
             basins.Add(basin);
         }
 
