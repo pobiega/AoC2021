@@ -39,27 +39,10 @@ public class Day_01 : BaseDay
         return acc;
     }
 
-    public static int Part2(Span<int> input)
+    public static int Part2(int[] input)
     {
-        var sums = SlidingWindows(input.ToArray()).ToArray();
+        var sums = input.SlidingWindow(3).Select(w => w.Sum()).ToArray();
+
         return Part1(sums);
-    }
-
-    public static IEnumerable<int> SlidingWindows(int[] input)
-    {
-        int index = 0;
-
-        int a = input[index++];
-        int b = input[index++];
-        int c = input[index++];
-        yield return a + b + c;
-
-        while (index < input.Length)
-        {
-            a = b;
-            b = c;
-            c = input[index++];
-            yield return a + b + c;
-        }
     }
 }
