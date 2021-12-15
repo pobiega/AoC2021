@@ -23,13 +23,13 @@ public class Day09Tests
             "9899965678",
         };
 
-        var data = Day_09.ParseInput(input);
+        var data = Day09.ParseInput(input);
 
         data[0][0].Should().Be(2);
         data[1][0].Should().Be(3);
         data[4][9].Should().Be(8);
 
-        var actual = Day_09.Part1(data);
+        var actual = Day09.Part1(data);
 
         actual.Should().Be(15);
     }
@@ -46,9 +46,9 @@ public class Day09Tests
             "9899965678",
         };
 
-        var data = Day_09.ParseInput(input);
+        var data = Day09.ParseInput(input);
 
-        var actual = Day_09.Part2(data);
+        var actual = Day09.Part2(data);
 
         actual.Should().Be(1134);
     }
@@ -65,9 +65,9 @@ public class Day09Tests
             "9899965678",
         };
 
-        var data = Day_09.ParseInput(input);
+        var data = Day09.ParseInput(input);
 
-        var actual = Day_09.FloodFill(new Point(9,0), data);
+        var actual = Day09.FloodFill(new Point(9,0), data);
 
         actual.Should().HaveCount(9);
     }

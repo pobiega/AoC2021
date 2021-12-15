@@ -1,10 +1,10 @@
 ﻿namespace AdventOfCode;
 
-public class Day_10 : BaseDay
+public class Day10 : BaseDay
 {
     private readonly string[] _input;
 
-    public Day_10()
+    public Day10()
     {
         _input = File.ReadAllLines(InputFilePath);
     }
@@ -19,7 +19,7 @@ public class Day_10 : BaseDay
         return new(Part2(_input).ToString());
     }
 
-    private static readonly Dictionary<char, int> _corruptedScore = new()
+    private static readonly Dictionary<char, int> CorruptedScore = new()
     {
         [')'] = 3,
         [']'] = 57,
@@ -27,7 +27,7 @@ public class Day_10 : BaseDay
         ['>'] = 25137,
     };
 
-    private static readonly Dictionary<char, int> _autocompleteScore = new()
+    private static readonly Dictionary<char, int> AutocompleteScore = new()
     {
         [')'] = 1,
         [']'] = 2,
@@ -35,7 +35,7 @@ public class Day_10 : BaseDay
         ['>'] = 4,
     };
 
-    private static readonly Dictionary<char, char> _openerToCloser = new()
+    private static readonly Dictionary<char, char> OpenerToCloser = new()
     {
         ['('] = ')',
         ['['] = ']',
@@ -50,7 +50,7 @@ public class Day_10 : BaseDay
         {
             if (TryFindCorruptedCharacter(line, out var c))
             {
-                var score = _corruptedScore[c];
+                var score = CorruptedScore[c];
                 total += score;
             }
         }
@@ -83,7 +83,7 @@ public class Day_10 : BaseDay
         foreach (var item in ending)
         {
             score *= 5;
-            score += _autocompleteScore[item];
+            score += AutocompleteScore[item];
         }
 
         return score;
@@ -95,7 +95,7 @@ public class Day_10 : BaseDay
 
         foreach (var item in line)
         {
-            if (_openerToCloser.ContainsKey(item))
+            if (OpenerToCloser.ContainsKey(item))
             {
                 stack.Push(item);
             }
@@ -112,7 +112,7 @@ public class Day_10 : BaseDay
 
         while (stack.TryPop(out var opener))
         {
-            output += _openerToCloser[opener];
+            output += OpenerToCloser[opener];
         }
 
         return output;
@@ -124,14 +124,14 @@ public class Day_10 : BaseDay
 
         foreach (var item in line)
         {
-            if (_openerToCloser.ContainsKey(item))
+            if (OpenerToCloser.ContainsKey(item))
             {
                 stack.Push(item);
             }
             else
             {
                 var opener = stack.Pop();
-                var expected = _openerToCloser[opener];
+                var expected = OpenerToCloser[opener];
 
                 if (item != expected)
                 {

@@ -11,7 +11,7 @@ public class Day06Tests
     {
         var input = new[] { 3, 4, 3, 1, 2 };
 
-        var actual = Day_06.Part1(input);
+        var actual = Day06.Part1(input);
 
         actual.Should().Be(5934);
     }
@@ -21,7 +21,7 @@ public class Day06Tests
     {
         var input = new int[] { 3, 4, 3, 1, 2 };
 
-        var actual = Day_06.Part2(input);
+        var actual = Day06.Part2(input);
 
         actual.Should().Be(26984457539);
     }

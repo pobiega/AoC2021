@@ -7,11 +7,11 @@ public struct Day12Line
     public string Item2;
 }
 
-public class Day_12 : BaseDay
+public class Day12 : BaseDay
 {
     private readonly Dictionary<string, List<string>> _graph;
 
-    public Day_12()
+    public Day12()
     {
         _graph = MakeGraph(File.ReadAllLines(InputFilePath));
     }

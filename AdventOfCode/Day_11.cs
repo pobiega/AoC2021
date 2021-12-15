@@ -1,11 +1,11 @@
 ﻿namespace AdventOfCode;
 
-public class Day_11 : BaseDay
+public class Day11 : BaseDay
 {
     private readonly Dictionary<Point, byte> _data;
     private readonly Dictionary<Point, byte> _data2;
 
-    public Day_11()
+    public Day11()
     {
         _data = ParseInput(File.ReadAllLines(InputFilePath));
         _data2 = ParseInput(File.ReadAllLines(InputFilePath));
@@ -36,7 +36,7 @@ public class Day_11 : BaseDay
     {
         for (int i = 0; i < 1000; i++)
         {
-            PerformStepInplace(data);
+            PerformStepInPlace(data);
 
             if (data.Values.All(b => b == 0))
             {
@@ -53,13 +53,13 @@ public class Day_11 : BaseDay
 
         for (int i = 0; i < 100; i++)
         {
-            total += PerformStepInplace(data);
+            total += PerformStepInPlace(data);
         }
 
         return total;
     }
 
-    public static int PerformStepInplace(Dictionary<Point, byte> data)
+    public static int PerformStepInPlace(Dictionary<Point, byte> data)
     {
         var flashedOctopi = new HashSet<Point>();
 

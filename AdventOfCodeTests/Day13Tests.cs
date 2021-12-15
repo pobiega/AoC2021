@@ -17,13 +17,13 @@ public class Day13Tests
             "fold along x=1"
         };
 
-        var (points, folds) = Day_13.ParseInput(input);
+        var (points, folds) = Day13.ParseInput(input);
 
         points.Should().HaveCount(2);
         folds.Should().HaveCount(1);
 
         points[0].Should().BeEquivalentTo(new Point(0, 0));
-        folds[0].Should().BeEquivalentTo(new FoldLine(XY.X, 1));
+        folds[0].Should().BeEquivalentTo(new FoldLine(Xy.X, 1));
     }
 
     [Fact]
@@ -38,9 +38,9 @@ public class Day13Tests
             "fold along x=2"
         };
 
-        var (points, folds) = Day_13.ParseInput(input);
+        var (points, folds) = Day13.ParseInput(input);
 
-        var actual = Day_13.Fold(points, XY.X, 2);
+        var actual = Day13.Fold(points, Xy.X, 2);
 
         actual.Should().HaveCount(3);
         actual.Should().ContainEquivalentOf(new Point(0, 0));
@@ -60,9 +60,9 @@ public class Day13Tests
             "fold along y=2"
         };
 
-        var (points, folds) = Day_13.ParseInput(input);
+        var (points, folds) = Day13.ParseInput(input);
 
-        var actual = Day_13.Fold(points, XY.Y, 2);
+        var actual = Day13.Fold(points, Xy.Y, 2);
 
         actual.Should().HaveCount(3);
         actual.Should().ContainEquivalentOf(new Point(0, 0));
@@ -97,9 +97,9 @@ public class Day13Tests
             "fold along y=7",
         };
 
-        var (points, folds) = Day_13.ParseInput(input);
+        var (points, folds) = Day13.ParseInput(input);
 
-        var actual = Day_13.Part1(points, folds[0]);
+        var actual = Day13.Part1(points, folds[0]);
 
         actual.Should().Be(17);
     }

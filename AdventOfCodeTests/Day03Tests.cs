@@ -12,7 +12,7 @@ public class Day03Tests
     [InlineData("11111", "00000")]
     public void CanInvertBinaryString(string input, string expected)
     {
-        var actual = Day_03.InvertBinaryString(input);
+        var actual = Day03.InvertBinaryString(input);
         actual.Should().BeEquivalentTo(expected);
     }
 
@@ -20,7 +20,7 @@ public class Day03Tests
     [InlineData("10110", 22)]
     public void CanConvertBinaryStringToInt(string input, int expected)
     {
-        var actual = Day_03.ConvertBinaryStringToInt(input);
+        var actual = Day03.ConvertBinaryStringToInt(input);
         actual.Should().Be(expected);
     }
 
@@ -43,7 +43,7 @@ public class Day03Tests
             "01010"
         };
 
-        var actual = Day_03.Part1(input);
+        var actual = Day03.Part1(input);
         actual.Should().Be(198);
     }
 
@@ -66,7 +66,7 @@ public class Day03Tests
             "01010"
         };
 
-        var actual = Day_03.Find(input, c => c < 0);
+        var actual = Day03.Find(input, c => c < 0);
 
         actual.Should().BeEquivalentTo("10111");
     }
@@ -90,7 +90,7 @@ public class Day03Tests
             "01010"
         };
 
-        var actual = Day_03.Find(input, c => c >= 0);
+        var actual = Day03.Find(input, c => c >= 0);
 
         actual.Should().BeEquivalentTo("01010");
     }
@@ -114,7 +114,7 @@ public class Day03Tests
             "01010"
         };
 
-        var actual = Day_03.Part2(input);
+        var actual = Day03.Part2(input);
         actual.Should().Be(230);
     }
 }

@@ -1,14 +1,13 @@
 ﻿namespace AdventOfCode;
 
-public class Day_05 : BaseDay
+public class Day05 : BaseDay
 {
-    private readonly string[] _input;
     private readonly Line[] _lines;
 
-    public Day_05()
+    public Day05()
     {
-        _input = File.ReadAllLines(InputFilePath);
-        _lines = ParseLines(_input).ToArray();
+        var input = File.ReadAllLines(InputFilePath);
+        _lines = ParseLines(input).ToArray();
     }
 
     public override ValueTask<string> Solve_1()

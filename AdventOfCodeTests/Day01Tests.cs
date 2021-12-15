@@ -10,7 +10,7 @@ public class Day01Tests
     {
         var input = new[] { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
 
-        var actual = Day_01.Part1(input);
+        var actual = Day01.Part1(input);
 
         actual.Should().Be(7);
     }
@@ -20,7 +20,7 @@ public class Day01Tests
     {
         var input = new[] { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
 
-        var actual = Day_01.Part2(input);
+        var actual = Day01.Part2(input);
 
         actual.Should().Be(5);
     }

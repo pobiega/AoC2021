@@ -23,7 +23,7 @@ public class Day10Tests
             "<{([{{}}[<[[[<>{}]]]>[]]",
         };
 
-        var actual = Day_10.Part1(data);
+        var actual = Day10.Part1(data);
 
         actual.Should().Be(26397);
     }
@@ -45,7 +45,7 @@ public class Day10Tests
             "<{([{{}}[<[[[<>{}]]]>[]]",
         };
 
-        var actual = Day_10.Part2(data);
+        var actual = Day10.Part2(data);
 
         actual.Should().Be(288957);
     }
@@ -59,7 +59,7 @@ public class Day10Tests
     [InlineData("<}", true)]
     public void CanFindCorruptedLine(string line, bool expected)
     {
-        var corrupted = Day_10.TryFindCorruptedCharacter(line, out _);
+        var corrupted = Day10.TryFindCorruptedCharacter(line, out _);
 
         corrupted.Should().Be(expected);
     }
@@ -69,7 +69,7 @@ public class Day10Tests
     [InlineData("(<[{", "}]>)")]
     public void CanAutocomplete(string line, string expected)
     {
-        var actual = Day_10.Autocomplete(line);
+        var actual = Day10.Autocomplete(line);
         actual.Should().BeEquivalentTo(expected);
     }
 
@@ -78,7 +78,7 @@ public class Day10Tests
     [InlineData(")}>]})", 5566)]
     public void AutocompleteScores(string ending, int score)
     {
-        var actual = Day_10.CalculateAutocompleteScore(ending);
+        var actual = Day10.CalculateAutocompleteScore(ending);
         actual.Should().Be(score);
     }
 }

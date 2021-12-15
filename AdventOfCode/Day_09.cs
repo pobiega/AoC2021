@@ -1,10 +1,10 @@
 ﻿namespace AdventOfCode;
 
-public class Day_09 : BaseDay
+public class Day09 : BaseDay
 {
     private readonly int[][] _input;
 
-    public Day_09()
+    public Day09()
     {
         _input = ParseInput(File.ReadAllLines(InputFilePath));
     }

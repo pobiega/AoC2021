@@ -1,10 +1,10 @@
 ﻿namespace AdventOfCode;
 
-public class Day_14 : BaseDay
+public class Day14 : BaseDay
 {
 	private readonly Day14Solver _solver;
 
-	public Day_14()
+	public Day14()
 	{
 		_solver = new Day14Solver(File.ReadAllLines(InputFilePath));
 	}

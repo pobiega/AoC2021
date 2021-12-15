@@ -20,9 +20,9 @@ public class Day12Tests
             "b-end",
         };
 
-        var data = Day_12.MakeGraph(input);
+        var data = Day12.MakeGraph(input);
 
-        var actual = Day_12.Part1(data);
+        var actual = Day12.Part1(data);
 
         actual.Should().Be(10);
     }
@@ -41,7 +41,7 @@ public class Day12Tests
             "b-end",
         };
 
-        var data = Day_12.MakeGraph(input);
+        var data = Day12.MakeGraph(input);
 
         data.Should().NotBeNull();
         data.Should().NotBeEmpty();

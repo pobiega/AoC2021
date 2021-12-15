@@ -2,11 +2,11 @@
 
 public record struct CleverDay8Line(string[] Patterns, string[] OutputValues, string FullPattern);
 
-public class Day_08 : BaseDay
+public class Day08 : BaseDay
 {
     private readonly CleverDay8Line[] _input;
 
-    public Day_08()
+    public Day08()
     {
         _input = File.ReadAllLines(InputFilePath).Select(ParseLine).ToArray();
     }
@@ -22,7 +22,7 @@ public class Day_08 : BaseDay
         return new(patterns, outputValues, fullPattern);
     }
 
-    private static readonly Dictionary<int, int> _frequencySumToDigit = new()
+    private static readonly Dictionary<int, int> FrequencySumToDigit = new()
     {
         [42] = 0,
         [17] = 1,
@@ -36,7 +36,7 @@ public class Day_08 : BaseDay
         [45] = 9,
     };
 
-    private static readonly Dictionary<int, int> _easyDigitMap = new()
+    private static readonly Dictionary<int, int> EasyDigitMap = new()
     {
         [2] = 1,
         [4] = 4,
@@ -51,7 +51,7 @@ public class Day_08 : BaseDay
         {
             foreach (var oval in item.OutputValues)
             {
-                if (_easyDigitMap.ContainsKey(oval.Length))
+                if (EasyDigitMap.ContainsKey(oval.Length))
                     total += 1;
             }
         }
@@ -82,7 +82,7 @@ public class Day_08 : BaseDay
         foreach (var outval in item.OutputValues)
         {
             var sum = Translate(outval, frequencies);
-            var digit = _frequencySumToDigit[sum];
+            var digit = FrequencySumToDigit[sum];
             output += digit;
         }
 

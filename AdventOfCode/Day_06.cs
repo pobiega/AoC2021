@@ -1,10 +1,10 @@
 ﻿namespace AdventOfCode;
 
-public class Day_06 : BaseDay
+public class Day06 : BaseDay
 {
     private readonly int[] _lanternfish;
 
-    public Day_06()
+    public Day06()
     {
         _lanternfish = File.ReadAllText(InputFilePath).Split(',').Select(int.Parse).ToArray();
     }

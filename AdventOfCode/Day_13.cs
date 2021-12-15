@@ -2,20 +2,20 @@
 
 namespace AdventOfCode;
 
-public enum XY
+public enum Xy
 {
     X,
     Y
 }
 
-public record struct FoldLine(XY Direction, int Position);
+public record struct FoldLine(Xy Direction, int Position);
 
-public class Day_13 : BaseDay
+public class Day13 : BaseDay
 {
     private readonly Point[] _points;
     private readonly FoldLine[] _folds;
 
-    public Day_13()
+    public Day13()
     {
         var (points, folds) = ParseInput(File.ReadAllLines(InputFilePath));
 
@@ -40,7 +40,7 @@ public class Day_13 : BaseDay
                 var remainder = item.Replace("fold along ", "");
                 var values = remainder.Split('=');
 
-                folds.Add(new FoldLine(values[0] == "x" ? XY.X : XY.Y, int.Parse(values[1])));
+                folds.Add(new FoldLine(values[0] == "x" ? Xy.X : Xy.Y, int.Parse(values[1])));
                 continue;
             }
 
@@ -55,11 +55,11 @@ public class Day_13 : BaseDay
         return (points.ToArray(), folds.ToArray());
     }
 
-    public static Point[] Fold(Point[] points, XY direction, int position)
+    public static Point[] Fold(Point[] points, Xy direction, int position)
     {
         var result = new HashSet<Point>();
 
-        if (direction == XY.X)
+        if (direction == Xy.X)
         {
             var maxX = points.Max(p => p.X);
 
@@ -77,7 +77,7 @@ public class Day_13 : BaseDay
                 }
             }
         }
-        else if (direction == XY.Y)
+        else if (direction == Xy.Y)
         {
             var maxY = points.Max(p => p.Y);
 

@@ -26,7 +26,7 @@ public class Day05Tests
             new Point(5,5),
         };
 
-        var actual = Day_05.ExtrapolateLine(line).ToArray();
+        var actual = Day05.ExtrapolateLine(line).ToArray();
 
         actual.Should().BeEquivalentTo(expected);
     }
@@ -50,7 +50,7 @@ public class Day05Tests
             new Point(5,5),
         };
 
-        var actual = Day_05.ExtrapolateLine(line).ToArray();
+        var actual = Day05.ExtrapolateLine(line).ToArray();
 
         actual.Should().BeEquivalentTo(expected);
     }
@@ -71,7 +71,7 @@ public class Day05Tests
             new Point(7,9),
         };
 
-        var actual = Day_05.ExtrapolateLine(line).ToArray();
+        var actual = Day05.ExtrapolateLine(line).ToArray();
 
         actual.Should().BeEquivalentTo(expected);
     }
@@ -93,9 +93,9 @@ public class Day05Tests
             "5,5 -> 8,2",
         };
 
-        var lines = Day_05.ParseLines(input).ToArray();
+        var lines = Day05.ParseLines(input).ToArray();
 
-        var actual = Day_05.OnlyStraightLines(lines).ToArray();
+        var actual = Day05.OnlyStraightLines(lines).ToArray();
 
         var diagonal = new Line
         {
@@ -123,9 +123,9 @@ public class Day05Tests
             "5,5 -> 8,2",
         };
 
-        var lines = Day_05.ParseLines(input).ToArray();
+        var lines = Day05.ParseLines(input).ToArray();
 
-        var actual = Day_05.Part1(lines);
+        var actual = Day05.Part1(lines);
 
         actual.Should().Be(5);
     }
@@ -147,9 +147,9 @@ public class Day05Tests
             "5,5 -> 8,2",
         };
 
-        var lines = Day_05.ParseLines(input).ToArray();
+        var lines = Day05.ParseLines(input).ToArray();
 
-        var actual = Day_05.Part2(lines);
+        var actual = Day05.Part2(lines);
 
         actual.Should().Be(12);
     }

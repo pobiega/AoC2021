@@ -54,7 +54,7 @@ public static class AocExtensions
         return value;
     }
 
-    public static R Let<T, R>(this T variable, Func<T, R> function)
+    public static TR Let<T, TR>(this T variable, Func<T, TR> function)
     {
         ArgumentNullException.ThrowIfNull(function);
 

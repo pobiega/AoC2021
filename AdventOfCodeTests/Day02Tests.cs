@@ -20,7 +20,7 @@ public class Day02Tests
             })
             .ToList();
 
-        var actual = Day_02.Part1(parsed);
+        var actual = Day02.Part1(parsed);
 
         actual.Should().Be(150);
     }
@@ -38,7 +38,7 @@ public class Day02Tests
            })
            .ToList();
 
-        var actual = Day_02.Part2(parsed);
+        var actual = Day02.Part2(parsed);
 
         actual.Should().Be(900);
     }

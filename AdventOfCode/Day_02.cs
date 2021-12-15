@@ -1,14 +1,13 @@
 ﻿namespace AdventOfCode;
 
-public class Day_02 : BaseDay
+public class Day02 : BaseDay
 {
-    private readonly string _input;
     private readonly List<(string, int)> _parsed;
 
-    public Day_02()
+    public Day02()
     {
-        _input = File.ReadAllText(InputFilePath);
-        _parsed = _input
+        var input = File.ReadAllText(InputFilePath);
+        _parsed = input
             .Split('\n')
             .Select(x =>
             {

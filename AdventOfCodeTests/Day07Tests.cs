@@ -11,7 +11,7 @@ public class Day07Tests
     {
         var input = new[] { 16, 1, 2, 0, 4, 2, 7, 1, 2, 14 };
 
-        var actual = Day_07.Part1(input);
+        var actual = Day07.Part1(input);
 
         actual.Should().Be(37);
     }
@@ -21,7 +21,7 @@ public class Day07Tests
     {
         var input = new[] { 16, 1, 2, 0, 4, 2, 7, 1, 2, 14 };
 
-        var actual = Day_07.Part2(input);
+        var actual = Day07.Part2(input);
 
         actual.Should().Be(168);
     }
@@ -31,7 +31,7 @@ public class Day07Tests
     {
         var input = new[] { 16, 1, 2, 0, 4, 2, 7, 1, 2, 14 };
 
-        var actual = Day_07.FindBestHorizontalPosition(input, c => c);
+        var actual = Day07.FindBestHorizontalPosition(input, c => c);
 
         actual.Should().Be((2, 37));
     }
@@ -41,7 +41,7 @@ public class Day07Tests
     {
         var input = new[] { 16, 1, 2, 0, 4, 2, 7, 1, 2, 14 };
 
-        var actual = Day_07.FindBestHorizontalPosition(input, c => Day_07.SumZeroToN(c));
+        var actual = Day07.FindBestHorizontalPosition(input, c => Day07.SumZeroToN(c));
 
         actual.Should().Be((5, 168));
     }

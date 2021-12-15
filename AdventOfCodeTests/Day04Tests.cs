@@ -64,7 +64,7 @@ public class Day04Tests
             " 2  0 12  3  7",
         };
 
-        var boards = Day_04.GenerateBoards(lines).ToArray();
+        var boards = Day04.GenerateBoards(lines).ToArray();
 
         boards.Length.Should().Be(3);
 

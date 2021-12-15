@@ -28,9 +28,9 @@ public class Day11Tests
             "5283751526",
         };
 
-        var data = Day_11.ParseInput(input);
+        var data = Day11.ParseInput(input);
 
-        var actual = Day_11.Part1(data);
+        var actual = Day11.Part1(data);
 
         actual.Should().Be(1656);
     }
@@ -52,9 +52,9 @@ public class Day11Tests
             "5283751526",
         };
 
-        var data = Day_11.ParseInput(input);
+        var data = Day11.ParseInput(input);
 
-        var actual = Day_11.Part2(data);
+        var actual = Day11.Part2(data);
 
         actual.Should().Be(195);
     }
@@ -71,7 +71,7 @@ public class Day11Tests
             "11111",
         };
 
-        var actual = Day_11.ParseInput(input);
+        var actual = Day11.ParseInput(input);
 
         actual[new Point(0, 0)].Should().Be(1);
     }
@@ -88,9 +88,9 @@ public class Day11Tests
             "11111",
         };
 
-        var actual = Day_11.ParseInput(input);
+        var actual = Day11.ParseInput(input);
 
-        var flashes = Day_11.PerformStepInplace(actual);
+        var flashes = Day11.PerformStepInPlace(actual);
 
         actual[new Point(0, 0)].Should().Be(3);
         actual[new Point(1, 1)].Should().Be(0);

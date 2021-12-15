@@ -24,9 +24,9 @@ public class Day08Tests
             "gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce",
         };
 
-        var inputs = inputStrings.Select(Day_08.ParseLine).ToArray();
+        var inputs = inputStrings.Select(Day08.ParseLine).ToArray();
 
-        var actual = Day_08.Part1(inputs);
+        var actual = Day08.Part1(inputs);
 
         actual.Should().Be(26);
     }
@@ -48,9 +48,9 @@ public class Day08Tests
             "gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce",
         };
 
-        var inputs = inputStrings.Select(Day_08.ParseLine).ToArray();
+        var inputs = inputStrings.Select(Day08.ParseLine).ToArray();
 
-        var actual = Day_08.Part2(inputs);
+        var actual = Day08.Part2(inputs);
 
         actual.Should().Be(61229);
     }

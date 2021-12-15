@@ -1,11 +1,11 @@
 ﻿namespace AdventOfCode;
 
-public class Day_04 : BaseDay
+public class Day04 : BaseDay
 {
     private readonly int[] _draw;
     private readonly Board[] _boards;
 
-    public Day_04()
+    public Day04()
     {
         var lines = File.ReadAllLines(InputFilePath);
 
@@ -16,7 +16,7 @@ public class Day_04 : BaseDay
 
     public static IEnumerable<Board> GenerateBoards(IEnumerable<string> lines)
     {
-        var buffer = new List<int>(Board.SIDE_LENGTH * Board.SIDE_LENGTH);
+        var buffer = new List<int>(Board.SideLength * Board.SideLength);
 
         foreach (var line in lines)
         {
@@ -126,7 +126,7 @@ public class Day_04 : BaseDay
 
 public class Board
 {
-    public const int SIDE_LENGTH = 5;
+    public const int SideLength = 5;
 
     private readonly int[] _numbers;
 
@@ -134,7 +134,7 @@ public class Board
 
     public Board(int[] numbers)
     {
-        if (numbers.Length != (SIDE_LENGTH * SIDE_LENGTH))
+        if (numbers.Length != (SideLength * SideLength))
         {
             throw new Exception("Invalid board length");
         }
@@ -145,13 +145,13 @@ public class Board
     {
         get
         {
-            return _numbers[(y * SIDE_LENGTH) + x];
+            return _numbers[(y * SideLength) + x];
         }
     }
 
     public bool CalculateWinner(HashSet<int> markedNumbers)
     {
-        for (int y = 0; y < SIDE_LENGTH; y++)
+        for (int y = 0; y < SideLength; y++)
         {
             if (markedNumbers.Contains(this[0, y]) &&
                 markedNumbers.Contains(this[1, y]) &&
@@ -164,7 +164,7 @@ public class Board
             }
         }
 
-        for (int x = 0; x < SIDE_LENGTH; x++)
+        for (int x = 0; x < SideLength; x++)
         {
             if (markedNumbers.Contains(this[x, 0]) &&
                 markedNumbers.Contains(this[x, 1]) &&
@@ -182,9 +182,9 @@ public class Board
 
     public IEnumerable<int> GetUnmarkedNumbers(HashSet<int> markedNumbers)
     {
-        for (int y = 0; y < SIDE_LENGTH; y++)
+        for (int y = 0; y < SideLength; y++)
         {
-            for (int x = 0; x < SIDE_LENGTH; x++)
+            for (int x = 0; x < SideLength; x++)
             {
                 if (!markedNumbers.Contains(this[x, y]))
                     yield return this[x, y];
